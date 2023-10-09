@@ -3,7 +3,13 @@ import sqlite3
 def main():
     conn = sqlite3.connect("my_database.db")
     cursor = conn.cursor()
-
+    # Drop tables
+    # Drop tables
+    cursor.execute("DROP TABLE IF EXISTS customers;")
+    cursor.execute("DROP TABLE IF EXISTS orders;")
+    cursor.execute("DROP TABLE IF EXISTS order_items;")
+    cursor.execute("DROP TABLE IF EXISTS products;")
+    
     # Create tables
     cursor.execute(
         """CREATE TABLE IF NOT EXISTS customers (
